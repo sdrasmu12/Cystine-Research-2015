@@ -1,0 +1,26 @@
+N  0  -1.276126   1.098581  -0.841508               
+C  0  -0.699126  -0.207419  -0.456508               
+C  0   0.704874  -0.091419   0.058492               
+O  0   1.112874  -0.737419   1.035492 
+
+C  2  CC 3 CCC 4 CCCO
+C  5  CC 2 CCC 3 CCCC
+C  6  RC 5 RCC 2 C7CCC
+C  6  RC 5 RCC 2 C8CCC
+C  7  RC 6 RCC 5 C9CCC
+C  8  RC 6 RCC 5 C10CCC
+C  10 RC 8 RCC 6 C11CCC
+                            
+CC = 1.52
+RC = 1.39
+CCC = 111.15
+RCC = 120.70
+CCCO = -96.21
+CCCC = 53.90
+C7CCC = 84.26
+C8CCC = -96.71
+C9CCC = -179.32
+C10CCC = -179.96
+C11CCC = -1.19
+
+              
