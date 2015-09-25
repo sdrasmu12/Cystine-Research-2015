@@ -38,10 +38,10 @@ sub bndcystine_protonate {
   @xyzs = map{$_->xyz} $hmol->all_atoms;
   my $h1  = $nerf->extend_abc( $xyzs[2],  $xyzs[1], $xyzs[0],  1.0,  120, 0 );
   my $h2  = $nerf->extend_abc( $xyzs[2],  $xyzs[1], $xyzs[0],  1.0,  120, 180 );
-  my $h3  = $nerf->extend_abc( $xyzs[7],  $xyzs[2], $xyzs[6],  1.0,  120,  120);
-  my $h4  = $nerf->extend_abc( $xyzs[7],  $xyzs[2], $xyzs[6],  1.0,  120, -120);
+  my $h3  = $nerf->extend_abc( $xyzs[7],  $xyzs[2], $xyzs[6],  1.0,  109,  180);
+ # my $h4  = $nerf->extend_abc( $xyzs[7],  $xyzs[2], $xyzs[6],  1.0,  120, -120);
   my $h5  = $nerf->extend_abc( $xyzs[2],  $xyzs[0], $xyzs[1],  1.0,  109, -120);
-  my $h6  = $nerf->extend_abc( $xyzs[6],  $xyzs[8], $xyzs[7],  1.0,  109, -120);
+ my $h6  = $nerf->extend_abc( $xyzs[6],  $xyzs[8], $xyzs[7],  1.0,  109, -120);
   my $h7  = $nerf->extend_abc( $xyzs[1],  $xyzs[5], $xyzs[4],  1.0,  109, -120);
   my $h8  = $nerf->extend_abc( $xyzs[1],  $xyzs[5], $xyzs[4],  1.0,  109, 120);
  my $h9  = $nerf->extend_abc( $xyzs[9],  $xyzs[7], $xyzs[8],  1.0,  109, 180);
@@ -52,11 +52,11 @@ sub bndcystine_protonate {
      $h5  = $nerf->extend_abc( $xyzs[2],  $xyzs[0], $xyzs[1],  1.0,  109, 120);
  }
 
- if ($h6->dist ($hmol->get_atoms(10)->xyz) <0.9){
+ if ($h6->dist ($hmol->get_atoms(10)->xyz) < 0.9){
    $h6  = $nerf->extend_abc( $xyzs[6],  $xyzs[8], $xyzs[7],  1.0,  109, 120)
  }
   $hmol->push_atoms(
-    map{ HackaMol::Atom->new(Z => 1, coords => [$_]) } ($h1,$h2,$h3,$h4,$h5,$h6,$h7,$h8,$h9,$h10,$h11)
+    map{ HackaMol::Atom->new(Z => 1, coords => [$_]) } ($h1,$h2,$h3,$h5,$h6,$h7,$h8,$h9,$h10,$h11)
  );
 
 #$hmol->print_xyz;
