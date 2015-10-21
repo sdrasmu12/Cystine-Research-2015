@@ -9,14 +9,15 @@ my $file = shift;
 my $mol  = HackaMol->new->read_file_mol($file);
 
 my $root = $file;
+$root =~s/\/stacks//;
 $root =~ s/\.xyz//;
-my $histo  = LoadFile("best/$root\_best.txt");
+my $histo  = LoadFile("best/nmrs_best.txt");
 my %histo  = %{$histo};
 my $qm_mol = 0;
 my $t      = 0;
 
-open( my $fh,  ">", "sorted/$root\_best_bnd.xyz" );
-open( my $fh2, ">", "sorted/$root\_best_unbnd.xyz" );
+open( my $fh,  ">", "sorted/nmrs_bnd.xyz" );
+open( my $fh2, ">", "sorted/nmrs_unbnd.xyz" );
 
 foreach my $dist ( sort { $a <=> $b } keys %histo ) {
     foreach my $chi3 ( sort { $a <=> $b } keys %{ $histo{$dist} } ) {
