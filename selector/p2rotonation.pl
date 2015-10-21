@@ -14,7 +14,7 @@ $mol->t(0);
 
 my $qm_mol = 0;
 
-foreach my $t ( 0..$mol->tmax){
+foreach my $t (0..$mol->tmax){
       $mol->t($t);
          if ($mol->get_atoms(2)->distance ($mol->get_atoms(6)) < 1.8 ){
                  $qm_mol = bndcystine_protonate($mol, $t);
@@ -112,7 +112,7 @@ sub cystine_protonate {
     map{ HackaMol::Atom->new(Z => 1, coords => [$_]) } ($h1,$h2,$h3,$h4,$h5,$h6,$h7,$h8,$h9,$h10,$h11,$h12)
  );
 
-$hmol->print_xyz;
+#$hmol->print_xyz;
   
 return ($hmol);
 }
